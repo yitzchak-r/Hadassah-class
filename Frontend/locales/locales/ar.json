@@ -1,0 +1,49 @@
+{
+  "header": {
+    "title": "مدرسة عدي في القدس",
+    "language": "الإنجليزية",
+    "home": "الرئيسية",
+    "categories": "الفئات",
+    "products": "المنتجات"
+  },
+  "footer": {
+    "copyright": "© {{year}} يتسحاق روزنهان",
+    "localTime": "الوقت المحلي: {{time}}",
+    "location": "خريطة المتجر"
+  },
+  "home": {
+    "title": "فصل حداسة"
+  },
+  "products": {
+    "title": "منتجاتنا",
+    "searchPlaceholder": "ابحث عن المنتجات...",
+    "categoryLabel": "الفئة",
+    "allCategories": "جميع الفئات",
+    "smartphones": "الهواتف الذكية",
+    "fragrances": "العطور",
+    "homeDecoration": "ديكور المنزل",
+    "groceries": "المواد الغذائية",
+    "laptops": "الحواسيب المحمولة",
+    "skincare": "العناية بالبشرة"
+  },
+  "cart": {
+    "EmptyCart": "عربة التسوق فارغة",
+    "AddtoCart": "أضف إلى السلة",
+    "LearnMore": "اعرف أكثر",
+    "orderOptions": "خيارات الطلب",
+    "Quantity": "الكمية",
+    "PriceComparison": "مقارنة الأسعار",
+    "standardDelivery": "التوصيل العادي",
+    "expressDelivery": "التوصيل السريع",
+    "checkout": "إتمام الشراء"
+  },
+  "Sign In": {
+    "Sign In": "تسجيل الدخول",
+    "EmailAddress": "البريد الإلكتروني",
+    "Password": "كلمة المرور",
+    "RememberMe": "تذكرني"
+  },
+  "map": {
+    "waitingToSeeYou": "في انتظار رؤيتك في متجرنا"
+  }
+}
