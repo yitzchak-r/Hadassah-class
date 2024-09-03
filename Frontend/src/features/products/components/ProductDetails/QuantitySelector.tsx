@@ -2,6 +2,7 @@ import React from "react";
 import TextField from "@mui/material/TextField";
 import MenuItem from "@mui/material/MenuItem";
 import { Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 interface QuantitySelectorProps {
   value: number;
@@ -12,14 +13,14 @@ const QuantitySelector: React.FC<QuantitySelectorProps> = ({
   value,
   onChange,
 }) => {
+  const { t } = useTranslation();
   return (
     <>
       <Typography variant="h6" color="text.primary" sx={{ marginTop: 2 }}>
-        Quantity
+        {t("cart.Quantity")}
       </Typography>
       <TextField
         select
-        label="Quantity"
         value={value}
         onChange={onChange}
         sx={{ width: "100%", marginTop: 1 }}

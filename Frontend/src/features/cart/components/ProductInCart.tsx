@@ -7,9 +7,11 @@ import { Grid } from "@mui/material";
 import { useAppSelector } from "../../../store/hooks";
 import ProductCartButton from "./ProductCartButton";
 import { PropProductInCart } from "../types/productInCart";
+import { useTranslation } from "react-i18next";
 
 const ProductInCart = ({ productCart }: PropProductInCart) => {
   const cart = useAppSelector((state) => state.cart.cart);
+  const { t } = useTranslation();
 
   const productIndexInCart = cart.findIndex(
     (p) => p.product.title === productCart.product.title
@@ -56,7 +58,7 @@ const ProductInCart = ({ productCart }: PropProductInCart) => {
         </Grid>
         <Grid>
           <Typography variant="body2" color="text.secondary">
-            quantity{" "}
+            {t("cart.Quantity")}{" "}
             {cart[productIndexInCart] && cart[productIndexInCart].quantity}
           </Typography>
         </Grid>

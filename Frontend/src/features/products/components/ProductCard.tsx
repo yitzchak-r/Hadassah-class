@@ -10,12 +10,14 @@ import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { productInCart } from "../../cart/types/productInCart";
 import { addProductToCart, setQuantityPlus } from "../../cart/cartSlice";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export const ProductCard: FC<ProductCardInterface> = (product) => {
   const navigate = useNavigate();
   const { title, description, price, thumbnail } = product;
   const dispatch = useAppDispatch();
   const cart = useAppSelector((state) => state.cart.cart);
+  const { t } = useTranslation();
 
   const handleAddProductToCart = (newProduct: productInCart) => {
     const alreadyInCart = cart.findIndex(
@@ -72,7 +74,7 @@ export const ProductCard: FC<ProductCardInterface> = (product) => {
           size="small"
           sx={{ backgroundColor: "#2196F3", color: "#fff" }}
         >
-          Learn More
+          {t("cart.LearnMore")}
         </Button>
         <Button
           size="small"
@@ -81,7 +83,7 @@ export const ProductCard: FC<ProductCardInterface> = (product) => {
             handleAddProductToCart({ product: product, quantity: 1 })
           }
         >
-          Add To Cart
+          {t("cart.AddtoCart")}
         </Button>
       </CardActions>
     </Card>

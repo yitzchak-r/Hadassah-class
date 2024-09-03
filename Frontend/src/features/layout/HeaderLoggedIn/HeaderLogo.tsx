@@ -26,7 +26,7 @@ const HeaderLogo = () => {
           textDecoration: "none",
         }}
       >
-        Team 3
+        Yitzchak
       </Typography>
     </Box>
   );

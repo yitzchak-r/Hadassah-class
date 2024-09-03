@@ -21,7 +21,7 @@ const StoreMap: React.FC = () => {
         }),
       ],
       view: new View({
-        center: fromLonLat([34.78057, 32.0853]), // המיקום של החנות
+        center: fromLonLat([35.2308, 31.769]),
         zoom: 15, // רמת הזום
       }),
     });

@@ -1,0 +1,45 @@
+{
+  "header": {
+    "title": "בית ספר עדי ירושלים",
+    "language": "עברית",
+    "home": "בית",
+    "categories": "קטגוריות",
+    "products": "מוצרים"
+  },
+  "footer": {
+    "copyright": "{{year}} יצחק רוזנהן ©",
+    "localTime": "זמן מקומי: {{time}}",
+    "location": "מפת החנות"
+  },
+  "home": {
+    "title": "הכיתה של הדסה"
+  },
+  "products": {
+    "smartphones": "טלפונים חכמים",
+    "fragrances": "בישום",
+    "homeDecoration": "עיצוב הבית",
+    "groceries": "מזון",
+    "laptops": "מחשבים ניידים",
+    "skincare": "טיפוח העור"
+  },
+  "cart": {
+    "EmptyCart": "העגלה שלך ריקה",
+    "AddtoCart": "הוסף לעגלה",
+    "LearnMore": "למד עוד",
+    "orderOptions": "אופציות משלוח",
+    "Quantity": "כמות",
+    "PriceComparison": "השוואת מחירים",
+    "standardDelivery": "משלוח רגיל",
+    "expressDelivery": "משלוח אקספרס",
+    "checkout": "תשלום"
+  },
+  "Sign In": {
+    "Sign In": "כניסה",
+    "EmailAddress": "דואר אלקטרוני",
+    "Password": "סיסמה",
+    "RememberMe": "תזכרו אותי"
+  },
+  "map": {
+    "waitingToSeeYou": "מחכים לראותכם בחנות שלנו"
+  }
+}

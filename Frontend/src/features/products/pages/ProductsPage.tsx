@@ -9,8 +9,10 @@ import Select, { SelectChangeEvent } from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
 import { ProductCardInterface } from "../interfaces/ProductCardInterface";
 import { Box, CssBaseline, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const ProductsPage = () => {
+  const { t } = useTranslation();
   const products = useAppSelector((store) => store.products).products;
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -55,12 +57,18 @@ const ProductsPage = () => {
               <MenuItem value={"All"} selected>
                 All Categories
               </MenuItem>
-              <MenuItem value={"smartphones"}>Smartphones</MenuItem>
-              <MenuItem value={"fragrances"}>Fragrances</MenuItem>
-              <MenuItem value={"home-decoration"}>Home Decoration</MenuItem>
-              <MenuItem value={"groceries"}>Groceries</MenuItem>
-              <MenuItem value={"laptops"}>Laptops</MenuItem>
-              <MenuItem value={"skincare"}>Skincare</MenuItem>
+              <MenuItem value={"smartphones"}>
+                {t("products.smartphones")}
+              </MenuItem>
+              <MenuItem value={"fragrances"}>
+                {t("products.fragrances")}
+              </MenuItem>
+              <MenuItem value={"home-decoration"}>
+                {t("products.homeDecoration")}
+              </MenuItem>
+              <MenuItem value={"groceries"}>{t("products.groceries")}</MenuItem>
+              <MenuItem value={"laptops"}>{t("products.laptops")}</MenuItem>
+              <MenuItem value={"skincare"}>{t("products.skincare")}</MenuItem>
             </Select>
           </FormControl>
         </Box>

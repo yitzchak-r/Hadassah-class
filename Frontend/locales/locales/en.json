@@ -1,0 +1,50 @@
+{
+  "header": {
+    "title": "Adi school in Jerusalem",
+    "language": "English",
+    "home": "home",
+    "categories": "categories",
+    "products": "products"
+  },
+  "footer": {
+    "copyright": "{{year}} Yitzchak Rosenhan ©",
+    "localTime": "Local time: {{time}}",
+    "location": "Store Map"
+  },
+  "home": {
+    "title": "Hadasa's Class"
+  },
+
+  "products": {
+    "title": "Our Products",
+    "searchPlaceholder": "Search products...",
+    "categoryLabel": "Category",
+    "allCategories": "All Categories",
+    "smartphones": "Smartphones",
+    "fragrances": "Fragrances",
+    "homeDecoration": "Home Decoration",
+    "groceries": "Groceries",
+    "laptops": "Laptops",
+    "skincare": "Skincare"
+  },
+  "cart": {
+    "EmptyCart": "Your Cart is Empty",
+    "AddtoCart": "Add to Cart",
+    "LearnMore": "Learn More",
+    "orderOptions": "Order Options",
+    "Quantity": "Quantity",
+    "PriceComparison": "Price Comparison",
+    "standardDelivery": "Standard Delivery",
+    "expressDelivery": "Express Delivery",
+    "checkout": "Checkout"
+  },
+  "Sign In": {
+    "Sign In": "Sign In",
+    "EmailAddress": "Email Address",
+    "Password": "Password",
+    "RememberMe": "Remember me"
+  },
+  "map": {
+    "waitingToSeeYou": "Waiting to see you in our store"
+  }
+}
