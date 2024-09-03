@@ -1,8 +1,9 @@
+import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Container from "@mui/material/Container";
 import Toolbar from "@mui/material/Toolbar";
 import AdbIcon from "@mui/icons-material/Adb";
-import { Typography, Box, IconButton } from "@mui/material";
+import { Typography, Box, IconButton, useMediaQuery } from "@mui/material";
 import { HeaderNav } from "./HeaderNav";
 import { useNavigate } from "react-router-dom";
 import HeaderButtons from "./HeaderButtons";
@@ -12,13 +13,35 @@ import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { setThemeMode } from "../../themes/themeModeSlice";
+import { useTranslation } from "react-i18next";
 
-const pages = ["בית", "קטגוריות", "מוצרים"];
+const LanguageSelector = ({ handleLanguageChange }) => {
+  return (
+    <select onChange={(e) => handleLanguageChange(e.target.value)}>
+      <option value="en">English 🇺🇸</option>
+      <option value="he">עברית 🇮🇱</option>
+    </select>
+  );
+};
 
 const Header = () => {
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const themeMode = useAppSelector((store) => store.themeMode.themeMode);
   const dispatch = useAppDispatch();
+
+  const handleLanguageChange = (language) => {
+    i18n.changeLanguage(language);
+  };
+
+  const isMobile = useMediaQuery("(max-width:630px)");
+
+  const homeText = t("header.home");
+  const categoriesText = t("header.categories");
+  const productsText = t("header.products");
+  const pages = [homeText, categoriesText, productsText];
+  const mobilePages = !isMobile ? [homeText, categoriesText, productsText] : [];
+
   return (
     <AppBar position="fixed" sx={{ width: "100%" }}>
       <Container maxWidth="xl">
@@ -50,7 +73,7 @@ const Header = () => {
                 textDecoration: "none",
               }}
             >
-              הכיתה של הדסה
+              {t("header.title")} {/* Use translation for the title */}
             </Typography>
           </Box>
           <Box
@@ -61,8 +84,7 @@ const Header = () => {
           >
             <HeaderNav pages={pages} />
           </Box>
-
-          <HeaderButtons pages={pages} />
+          <HeaderButtons pages={mobilePages} />
           <Box sx={{ marginLeft: "auto", display: "flex" }}>
             <HeaderSignInButton />
             <IconButton
@@ -74,6 +96,7 @@ const Header = () => {
             >
               {themeMode ? <Brightness4Icon /> : <Brightness7Icon />}
             </IconButton>
+            <LanguageSelector handleLanguageChange={handleLanguageChange} />
             <Cart />
           </Box>
         </Toolbar>

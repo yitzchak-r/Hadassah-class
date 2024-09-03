@@ -14,7 +14,11 @@ import { useAppSelector } from "../../../store/hooks";
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
 import { productInCart } from "../types/productInCart";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 const Cart = () => {
+  const { t } = useTranslation();
+
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [localStorageCart, setLocalStorageCart] = useState([]);
@@ -63,7 +67,8 @@ const Cart = () => {
                 mb: 4,
               }}
             >
-              Your Cart is Empty
+              {t("cart.EmptyCart")}
+
               <Box
                 sx={{
                   width: 260,
@@ -96,7 +101,7 @@ const Cart = () => {
               variant="contained"
               sx={{ mb: 1 }}
             >
-              <ShoppingCartCheckoutIcon sx={{ mr: 1 }} /> Checkout
+              <ShoppingCartCheckoutIcon sx={{ mr: 1 }} /> {t("cart.checkout")}
             </Button>
           </>
         )}

@@ -14,7 +14,10 @@ import {
 } from "../../products/helpers/validation";
 import { Copyright } from "../../layout/Copyright";
 import SignInUpButton from "./SignInUpButton";
+import { useTranslation } from "react-i18next";
+
 export const SignIn = () => {
+  const { t } = useTranslation();
   const {
     register,
     handleSubmit,
@@ -43,7 +46,7 @@ export const SignIn = () => {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign in
+          {t("Sign In.Sign In")}
         </Typography>
         <Box
           component="form"
@@ -56,7 +59,7 @@ export const SignIn = () => {
             required
             fullWidth
             id="email"
-            label="Email Address"
+            label={t("Sign In.EmailAddress")}
             autoComplete="email"
             autoFocus
             {...register("email", emailValidet)}
@@ -67,7 +70,7 @@ export const SignIn = () => {
             margin="normal"
             required
             fullWidth
-            label="Password"
+            label={t("Sign In.Password")}
             type="password"
             id="password"
             autoComplete="current-password"
@@ -77,9 +80,12 @@ export const SignIn = () => {
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
+            label={t("Sign In.RememberMe")}
           />
-          <SignInUpButton text="Sign In" isValid={isValid}></SignInUpButton>
+          <SignInUpButton
+            text={t("Sign In.Sign In")}
+            isValid={isValid}
+          ></SignInUpButton>
           {/* <SignInUpLink text="signup" /> */}
         </Box>
       </Box>

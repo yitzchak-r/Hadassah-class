@@ -1,10 +1,13 @@
 import React from "react";
 import StoreMap from "./StoreMap";
+import { useTranslation } from "react-i18next";
 
 const StorePage: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <div>
-      <h3>מחכים לראותכם בחנות שלנו</h3>
+      <h3>{t("map.waitingToSeeYou")}</h3>
       <StoreMap />
     </div>
   );

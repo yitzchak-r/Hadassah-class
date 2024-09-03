@@ -9,6 +9,8 @@ import QuantitySelector from "./QuantitySelector";
 import { productInCart } from "../../../cart/types/productInCart";
 import { useAppDispatch, useAppSelector } from "../../../../store/hooks";
 import { addProductToCart, setQuantityPlus } from "../../../cart/cartSlice";
+import { useTranslation } from "react-i18next";
+
 interface ProductCardProps {
   title: string;
   description: string;
@@ -22,6 +24,8 @@ const ProductDetailsCard: React.FC<ProductCardProps> = (product) => {
   const dispatch = useAppDispatch();
   const cart = useAppSelector((state) => state.cart.cart);
   const [quantity, setQuantity] = React.useState(1);
+  const { t } = useTranslation();
+
   const handleQuantityChange = (
     event: React.ChangeEvent<{ value: unknown }>
   ) => {
@@ -84,7 +88,7 @@ const ProductDetailsCard: React.FC<ProductCardProps> = (product) => {
             color: "#fff",
           }}
         >
-          Add to Cart
+          {t("cart.AddtoCart")}
         </Button>
         <Button
           variant="contained"
@@ -96,7 +100,7 @@ const ProductDetailsCard: React.FC<ProductCardProps> = (product) => {
             color: "#fff",
           }}
         >
-          Price Comparison
+          {t("cart.PriceComparison")}
         </Button>
       </CardContent>
     </Card>

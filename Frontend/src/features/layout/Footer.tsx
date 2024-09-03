@@ -4,8 +4,10 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation(); 
   const navigate = useNavigate();
   const [currentTime, setCurrentTime] = useState(getFormattedTime());
 
@@ -31,15 +33,18 @@ const Footer = () => {
         backgroundColor: "#3f51b5",
         color: "white",
         padding: "10px 0",
-        // position: "fixed",
-        bottom: 0,
         width: "100%",
+        position: "fixed",
+        bottom: 0,
+        left: 0,
         borderRadius: "3px",
+        textAlign: "center",
       }}
     >
-      <Container maxWidth="md">
+      <Container maxWidth="xl">
         <Typography variant="body2">
-          © {new Date().getFullYear()} Team 3 | Local Time: {currentTime}
+          {t("footer.copyright", { year: new Date().getFullYear() })} |{" "}
+          {t("footer.localTime", { time: currentTime })}
         </Typography>
       </Container>
       <Button
@@ -48,7 +53,7 @@ const Footer = () => {
           navigate("/home/store/map");
         }}
       >
-        Location
+        {t("footer.location")}
       </Button>
     </Box>
   );
