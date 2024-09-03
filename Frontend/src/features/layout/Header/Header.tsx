@@ -18,8 +18,9 @@ import { useTranslation } from "react-i18next";
 const LanguageSelector = ({ handleLanguageChange }) => {
   return (
     <select onChange={(e) => handleLanguageChange(e.target.value)}>
-      <option value="en">English 🇺🇸</option>
-      <option value="he">עברית 🇮🇱</option>
+      <option value="en">English 🇺🇸</option> {/* החלפת שפה לאנגלית*/}
+      <option value="he">עברית 🇮🇱</option> {/* החלפת שפה לעברית*/}
+      <option value="ar">العربية 🇪🇬</option> {/* החלפת שפה לערבית*/}
     </select>
   );
 };

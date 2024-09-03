@@ -14,6 +14,7 @@ import LanguageDetector from "i18next-browser-languagedetector";
 // Import translations
 import enTranslations from "../locales/locales/en.json";
 import heTranslations from "../locales/locales/he.json";
+import arTranslations from "../locales/locales/ar.json";
 
 // Initialize i18next
 i18next
@@ -26,6 +27,9 @@ i18next
       },
       he: {
         translation: heTranslations,
+      },
+      ar: {
+        translation: arTranslations,
       },
     },
     fallbackLng: "en", // Default language
