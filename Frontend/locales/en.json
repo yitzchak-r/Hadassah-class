@@ -2,9 +2,9 @@
   "header": {
     "title": "Adi school in Jerusalem",
     "language": "English",
-    "home": "home",
-    "categories": "categories",
-    "products": "products"
+    "home": "Home",
+    "categories": "Categories",
+    "products": "Products"
   },
   "footer": {
     "copyright": "{{year}} Yitzchak Rosenhan ©",
@@ -18,6 +18,7 @@
   "products": {
     "title": "Our Products",
     "searchPlaceholder": "Search products...",
+    "selectedCategory": "Category selected",
     "categoryLabel": "Category",
     "allCategories": "All Categories",
     "smartphones": "Smartphones",
@@ -25,7 +26,8 @@
     "homeDecoration": "Home Decoration",
     "groceries": "Groceries",
     "laptops": "Laptops",
-    "skincare": "Skincare"
+    "skincare": "Skincare",
+    "productImage": "This product image is not available"
   },
   "cart": {
     "EmptyCart": "Your Cart is Empty",

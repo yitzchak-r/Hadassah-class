@@ -12,9 +12,9 @@ import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
 // Import translations
-import enTranslations from "../locales/locales/en.json";
-import heTranslations from "../locales/locales/he.json";
-import arTranslations from "../locales/locales/ar.json";
+import enTranslations from "../locales/en.json";
+import heTranslations from "../locales/he.json";
+import arTranslations from "../locales/ar.json";
 
 // Initialize i18next
 i18next

@@ -1,5 +1,5 @@
 import React from "react";
-import ProductDetailsPage from "./ProductDetailsPage";
+import ProductDetailsPage from "../../../../features/products/pages/ProductDetailsPage";
 
 const ProductDetails: React.FC = () => {
   const productData = {

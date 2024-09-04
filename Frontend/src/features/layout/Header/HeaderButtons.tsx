@@ -22,9 +22,20 @@ const HeaderButtons: React.FC<HeaderButtonsProps> = ({ pages }) => {
           <Button
             key={page}
             onClick={() => {
-              if (page === "Categories") navigate("/home/categories");
-              if (page === "Products") navigate("/home/products");
-              if (page === "Home") navigate("/home");
+              if (
+                page === "Categories" ||
+                page === "קטגוריות" ||
+                page === "الفئات"
+              )
+                navigate("/home/categories");
+              if (
+                page === "Products" ||
+                page === "מוצרים" ||
+                page === "المنتجات"
+              )
+                navigate("/home/products");
+              if (page === "Home" || page === "בית" || page === "الرئيسية")
+                navigate("/home");
             }}
             sx={{ my: 2, mx: 1, color: "white", display: "inline-block" }}
           >

@@ -17,6 +17,7 @@
   "products": {
     "title": "منتجاتنا",
     "searchPlaceholder": "ابحث عن المنتجات...",
+    "selectedCategory": "تم اختيار الفئة",
     "categoryLabel": "الفئة",
     "allCategories": "جميع الفئات",
     "smartphones": "الهواتف الذكية",
@@ -24,7 +25,8 @@
     "homeDecoration": "ديكور المنزل",
     "groceries": "المواد الغذائية",
     "laptops": "الحواسيب المحمولة",
-    "skincare": "العناية بالبشرة"
+    "skincare": "العناية بالبشرة",
+    "productImage": "صورة المنتج هذه غير متوفرة"
   },
   "cart": {
     "EmptyCart": "عربة التسوق فارغة",

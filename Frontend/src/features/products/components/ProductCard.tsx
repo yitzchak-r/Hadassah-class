@@ -38,15 +38,15 @@ export const ProductCard: FC<ProductCardInterface> = (product) => {
         borderRadius: "8px",
         // backgroundColor: "#0f0d14",
         boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-        transition: "transform 0.3s ease-in-out", // Add a smooth transition for the transform property
+        transition: "transform 0.3s ease-in-out",
         ":hover": {
-          transform: "scale(1.03)", // Increase the scale on hover
+          transform: "scale(1.03)",
         },
       }}
     >
       <CardMedia
         component="img"
-        alt="Apple iPhone 11"
+        alt={t("products.productImage")}
         height="300px"
         image={thumbnail}
         sx={{ objectFit: "cover" }}

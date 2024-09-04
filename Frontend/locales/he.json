@@ -14,13 +14,20 @@
   "home": {
     "title": "הכיתה של הדסה"
   },
+
   "products": {
+    "title": "Our Products",
+    "searchPlaceholder": "...חיפוש מוצר",
+    "selectedCategory": "בחירת קטגוריה",
+    "categoryLabel": "Category",
+    "allCategories": "כל הקטגוריות",
     "smartphones": "טלפונים חכמים",
     "fragrances": "בישום",
     "homeDecoration": "עיצוב הבית",
     "groceries": "מזון",
     "laptops": "מחשבים ניידים",
-    "skincare": "טיפוח העור"
+    "skincare": "טיפוח העור",
+    "productImage": "תמונת מוצר זה אינו זמין"
   },
   "cart": {
     "EmptyCart": "העגלה שלך ריקה",

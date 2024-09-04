@@ -37,25 +37,24 @@ const ProductsPage = () => {
   return (
     <>
       <CssBaseline />
-      <Header />
       <Box className="container" style={{ padding: "20px" }}>
         <Typography
-          sx={{ textAlign: "center", marginBottom: "30px" }}
+          sx={{ textAlign: "center", marginBottom: "30px", marginTop: "5rem" }}
         ></Typography>
 
         <Box className="filter-section">
           <TextField
-            label="Search products..."
+            label={t("products.searchPlaceholder")}
             variant="outlined"
             value={searchTerm}
             onChange={handleSearchChange}
           />
 
           <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-            <InputLabel>Category selected</InputLabel>
+            <InputLabel>{t("products.selectedCategory")}</InputLabel>
             <Select value={selectedCategory} onChange={handleChange}>
               <MenuItem value={"All"} selected>
-                All Categories
+                {t("products.allCategories")}
               </MenuItem>
               <MenuItem value={"smartphones"}>
                 {t("products.smartphones")}
