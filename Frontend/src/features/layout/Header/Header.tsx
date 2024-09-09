@@ -14,16 +14,7 @@ import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { setThemeMode } from "../../themes/themeModeSlice";
 import { useTranslation } from "react-i18next";
-
-const LanguageSelector = ({ handleLanguageChange }) => {
-  return (
-    <select onChange={(e) => handleLanguageChange(e.target.value)}>
-      <option value="en">English 🇺🇸</option> {/* החלפת שפה לאנגלית*/}
-      <option value="he">עברית 🇮🇱</option> {/* החלפת שפה לעברית*/}
-      <option value="ar">العربية 🇪🇬</option> {/* החלפת שפה לערבית*/}
-    </select>
-  );
-};
+import LanguageSelector from "./LanguageSelector";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -33,6 +24,9 @@ const Header = () => {
 
   const handleLanguageChange = (language) => {
     i18n.changeLanguage(language);
+    document
+      .getElementById("html")
+      .setAttribute("dir", language === "he" ? "rtl" : "ltr");
   };
 
   const isMobile = useMediaQuery("(max-width:630px)");
@@ -74,7 +68,7 @@ const Header = () => {
                 textDecoration: "none",
               }}
             >
-              {t("header.title")} {/* Use translation for the title */}
+              {t("header.title")}
             </Typography>
           </Box>
           <Box
@@ -86,7 +80,7 @@ const Header = () => {
             <HeaderNav pages={pages} />
           </Box>
           <HeaderButtons pages={mobilePages} />
-          <Box sx={{ marginLeft: "auto", display: "flex" }}>
+          <Box sx={{ marginLeft: 0, display: "flex" }}>
             <HeaderSignInButton />
             <IconButton
               sx={{ ml: 1 }}
