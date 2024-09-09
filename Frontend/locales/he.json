@@ -44,7 +44,8 @@
     "Sign In": "כניסה",
     "EmailAddress": "דואר אלקטרוני",
     "Password": "סיסמה",
-    "RememberMe": "תזכרו אותי"
+    "RememberMe": "תזכרו אותי",
+    "firstName": "שם פרטי"
   },
   "map": {
     "waitingToSeeYou": "מחכים לראותכם בחנות שלנו"

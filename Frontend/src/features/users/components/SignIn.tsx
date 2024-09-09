@@ -15,6 +15,7 @@ import {
 import { Copyright } from "../../layout/Copyright";
 import SignInUpButton from "./SignInUpButton";
 import { useTranslation } from "react-i18next";
+import SignInUpLink from "./SignInUpLink";
 
 export const SignIn = () => {
   const { t } = useTranslation();
@@ -86,7 +87,7 @@ export const SignIn = () => {
             text={t("Sign In.Sign In")}
             isValid={isValid}
           ></SignInUpButton>
-          {/* <SignInUpLink text="signup" /> */}
+          <SignInUpLink text="signup" />
         </Box>
       </Box>
       <Copyright />

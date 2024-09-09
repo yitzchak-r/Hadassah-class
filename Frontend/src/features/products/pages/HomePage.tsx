@@ -3,14 +3,14 @@ import { useAppSelector } from "../../../store/hooks";
 import { GetCategories } from "../../categories/utils/GetCategories";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useTranslation } from "react-i18next"; // Import useTranslation
+import { useTranslation } from "react-i18next";
 
 const HomePage = () => {
   GetCategories();
   const categories = useAppSelector((store) => store.categories).categories;
   const navigate = useNavigate();
   const themeMode = useAppSelector((store) => store.themeMode.themeMode);
-  const { t } = useTranslation(); // Use useTranslation hook
+  const { t } = useTranslation();
 
   return (
     <>
@@ -22,7 +22,7 @@ const HomePage = () => {
             flexDirection: "column",
             alignItems: "center",
             marginTop: "60px",
-            textAlign: "center", // Center text horizontally
+            textAlign: "center",
           }}
         >
           <Typography
@@ -31,17 +31,18 @@ const HomePage = () => {
               marginBottom: "20px",
             }}
           >
-            {t("home.title")} {/* Use translation for the title */}
+            {t("home.title")}
           </Typography>
           <Box
             sx={{
               display: "flex",
-              maxWidth: "700px",
-              marginBottom: "60px",
-              marginTop: "10px",
+              flexDirection: "row",
               flexWrap: "wrap",
               justifyContent: "center",
               alignItems: "center",
+              maxWidth: "1200px", // Max width for centered content
+              width: "100%",
+              gap: "20px", // Add gap between items
             }}
           >
             {categories.map((category, i) => (
@@ -49,7 +50,10 @@ const HomePage = () => {
                 sx={{
                   display: "flex",
                   flexDirection: "column",
+                  alignItems: "center",
+                  textAlign: "center",
                   margin: "10px",
+                  width: "200px", // Set fixed width to keep items aligned
                 }}
                 key={i}
               >
@@ -57,13 +61,11 @@ const HomePage = () => {
                   variant="h5"
                   sx={{
                     color: themeMode ? "black" : "yellow",
-                    textAlign: "center",
                   }}
                 >
                   {category.category_name}
                 </Typography>
                 <Box
-                  key={i}
                   sx={{
                     opacity: 0.7,
                     width: "200px",
@@ -75,12 +77,10 @@ const HomePage = () => {
                     marginTop: "10px",
                     display: "flex",
                     justifyContent: "center",
-                    transition:
-                      "transform 0.3s ease, opacity 0.3s ease, rotate 0.3s ease",
                     alignItems: "center",
+                    transition: "transform 0.3s ease, opacity 0.3s ease",
                     ":hover": {
                       transform: "scale(1.1)",
-                      rotate: "-1deg",
                       opacity: 1,
                     },
                   }}

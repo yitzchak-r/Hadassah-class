@@ -5,10 +5,12 @@ import Container from "@mui/material/Container";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useTheme } from "@mui/material/styles";
 
 const Footer = () => {
-  const { t } = useTranslation(); 
+  const { t } = useTranslation();
   const navigate = useNavigate();
+  const theme = useTheme(); // גישה לתבנית הנוכחית
   const [currentTime, setCurrentTime] = useState(getFormattedTime());
 
   useEffect(() => {
@@ -30,7 +32,7 @@ const Footer = () => {
     <Box
       component="footer"
       sx={{
-        backgroundColor: "#3f51b5",
+        backgroundColor: theme.palette.mode === "dark" ? "#272727" : "#3f51b5", // הגדרת צבע לפי מצב התבנית
         color: "white",
         padding: "10px 0",
         width: "100%",

@@ -12,7 +12,8 @@
     "location": "Store Map"
   },
   "home": {
-    "title": "Hadasa's Class"
+    "title": "Hadasa's Class",
+    "lastName": "lastName"
   },
 
   "products": {
@@ -44,7 +45,8 @@
     "Sign In": "Sign In",
     "EmailAddress": "Email Address",
     "Password": "Password",
-    "RememberMe": "Remember me"
+    "RememberMe": "Remember me",
+    "firstName": "First Name"
   },
   "map": {
     "waitingToSeeYou": "Waiting to see you in our store"

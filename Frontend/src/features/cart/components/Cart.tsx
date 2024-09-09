@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import {
   SwipeableDrawer,
   Button,
@@ -7,7 +8,6 @@ import {
   Typography,
   Badge,
 } from "@mui/material";
-import React, { useEffect, useState } from "react";
 import ProductInCart from "./ProductInCart";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCart";
 import { useAppSelector } from "../../../store/hooks";
@@ -17,8 +17,7 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 const Cart = () => {
-  const { t } = useTranslation();
-
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [localStorageCart, setLocalStorageCart] = useState([]);
@@ -27,6 +26,7 @@ const Cart = () => {
   cart.forEach((product) => {
     quantity += product.quantity;
   });
+
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
     setLocalStorageCart(JSON.parse(localStorage.getItem("cart") as string));
@@ -38,15 +38,21 @@ const Cart = () => {
       setOpen(open);
     };
 
+  // קביעת צד הפתיחה של ה־SwipeableDrawer לפי השפה
+  const anchor = i18n.language === "he" ? "right" : "left";
+
   return (
     <Box>
       <Box component={Button} onClick={toggleDrawer(true)} variant="outlined">
         <Badge badgeContent={quantity} color="primary">
-          <ShoppingCartOutlinedIcon sx={{ color: "white" }} />
+          <ShoppingCartOutlinedIcon
+            sx={{ color: "white", marginTop: "0.625rem" }}
+          />
         </Badge>
       </Box>
 
       <SwipeableDrawer
+        anchor={anchor}
         open={open}
         onClose={toggleDrawer(false)}
         onOpen={toggleDrawer(true)}
@@ -63,7 +69,6 @@ const Cart = () => {
               align="center"
               sx={{
                 fontWeight: "bold",
-                color: "",
                 mb: 4,
               }}
             >
@@ -74,7 +79,7 @@ const Cart = () => {
                   width: 260,
                   height: 260,
                   backgroundImage: `url("https://cdni.iconscout.com/illustration/premium/thumb/empty-cart-7359557-6024626.png")`,
-                  backgroundSize: "cover", // Set the background size
+                  backgroundSize: "cover",
                   backgroundPosition: "center",
                   mb: 4,
                 }}
@@ -109,4 +114,5 @@ const Cart = () => {
     </Box>
   );
 };
+
 export default Cart;
